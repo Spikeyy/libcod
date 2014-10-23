@@ -272,6 +272,8 @@ Scr_Method scriptMethods[] = {
 	{"getLastMSG"            , gsc_player_getLastMSG         , 0},
 	{"setAlive"              , gsc_entity_setalive           , 0},
 	{"setBounds"             , gsc_entity_setbounds          , 0},
+	{"get_userinfo"          , gsc_get_userinfo              , 0},
+	{"set_userinfo"          , gsc_set_userinfo              , 0},
 	#endif
 	
 	{NULL, NULL, 0}
