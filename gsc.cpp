@@ -270,6 +270,8 @@ Scr_Method scriptMethods[] = {
 	{"ClientCommand"         , gsc_player_ClientCommand      , 0},
 	{"getLastConnectTime"    , gsc_player_getLastConnectTime , 0},
 	{"getLastMSG"            , gsc_player_getLastMSG         , 0},
+	{"getAddressType"        , gsc_player_addresstype        , 0},
+	{"renameBot"             , gsc_player_renamebot          , 0},
 	{"setAlive"              , gsc_entity_setalive           , 0},
 	{"setBounds"             , gsc_entity_setbounds          , 0},
 	{"get_userinfo"          , gsc_get_userinfo              , 0},
