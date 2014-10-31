@@ -93,7 +93,7 @@ void *mysql_async_query_handler(void* input_nothing) //is threaded after initial
 	if(started)
 	{
 		printf("scriptengine> async handler already started. Returning\n");
-		return;
+		return NULL;
 	}
 	started = true;
 	mysql_async_connection *c = first_async_connection;
@@ -101,7 +101,7 @@ void *mysql_async_query_handler(void* input_nothing) //is threaded after initial
 	{
 		printf("scriptengine> async handler started before any connection was initialized\n"); //this should never happen
 		started = false;
-		return;
+		return NULL;
 	}
 	mysql_async_task *q;
 	while(true)
@@ -309,7 +309,7 @@ void gsc_mysql_async_initializer()//returns array with mysql connection handlers
 	if(pthread_create(&async_handler, NULL, mysql_async_query_handler, NULL))
 	{
 		printf("Error detaching async handler thread\n");
-		return NULL;
+		return;
 	}
 	pthread_detach(async_handler);
 	//std::thread async_query(mysql_async_query_handler);
